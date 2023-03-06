@@ -24,6 +24,8 @@ export default class i18nTransform extends Transform {
       contextSeparator: '_',
       createOldCatalogs: true,
       defaultNamespace: 'translation',
+      getNamespaceFromSourcePath: false,
+      namespaceSourcePathFragment: 'first', // 'first', 'last', or an index number; defaults to first
       defaultValue: '',
       indentation: 2,
       keepRemoved: false,
@@ -85,6 +87,23 @@ export default class i18nTransform extends Transform {
     }
   }
 
+  _pathFragment(filePath, fragment = 'first') {
+    const rootPath = path.dirname(filePath)
+    const dirname = rootPath.replace(this.options.namespaceSourceBasePath, '')
+    const split = dirname.split(path.sep)
+    switch (fragment) {
+      case 'first':
+        return split[0]
+      case 'last':
+        return split[split.length - 1]
+      default:
+        if (Number.isInteger(fragment) && split.length > fragment) {
+          return split[fragment]
+        }
+        return split[0]
+    }
+  }
+
   _transform(file, encoding, done) {
     let content
     if (file.isBuffer()) {
@@ -115,12 +134,21 @@ export default class i18nTransform extends Transform {
 
       const parts = key.split(this.options.namespaceSeparator)
 
-      // make sure we're not pulling a 'namespace' out of a default value
-      if (parts.length > 1 && key !== entry.defaultValue) {
-        entry.namespace = parts.shift()
+      if (this.options.getNamespaceFromSourcePath) {
+        entry.namespace =
+          this._pathFragment(
+            file.path,
+            this.options.namespaceSourcePathFragment
+          )
+            .toString()
+            .trim() || this.options.defaultNamespace
+      } else {
+        // make sure we're not pulling a 'namespace' out of a default value
+        if (parts.length > 1 && key !== entry.defaultValue) {
+          entry.namespace = parts.shift()
+        }
+        entry.namespace = entry.namespace || this.options.defaultNamespace
       }
-      entry.namespace = entry.namespace || this.options.defaultNamespace
-
       key = parts.join(this.options.namespaceSeparator)
       key = key.replace(/\\('|"|`)/g, '$1')
       key = key.replace(/\\n/g, '\n')
