@@ -1,7 +1,7 @@
 {
-  "name": "i18next-parser",
+  "name": "@everfi/i18next-parser",
   "description": "Command Line tool for i18next",
-  "version": "8.0.0",
+  "version": "8.1.1",
   "type": "module",
   "license": "MIT",
   "author": "Karel Ledru",
@@ -72,7 +72,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/i18next/i18next-parser"
+    "url": "https://github.com/EverFi/everfi-frontend"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "bin/",
