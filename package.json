@@ -1,7 +1,7 @@
 {
   "name": "@everfi/i18next-parser",
   "description": "Command Line tool for i18next",
-  "version": "5.4.1",
+  "version": "5.4.2",
   "license": "MIT",
   "author": "Karel Ledru",
   "main": "dist/index.js",
@@ -33,7 +33,7 @@
     "eol": "^0.9.1",
     "fs-extra": "^10.0.0",
     "gulp-sort": "^2.0.0",
-    "i18next": "^21.2.0",
+    "i18next": "^22.5.1",
     "js-yaml": "4.1.0",
     "rsvp": "^4.8.2",
     "sort-keys": "^4.2.0",
@@ -67,7 +67,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/EverFi/everfi-frontend"
+    "url": "https://github.com/EverFi/i18next-parser"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
