@@ -1,7 +1,7 @@
 {
   "name": "@everfi/i18next-parser",
   "description": "Command Line tool for i18next",
-  "version": "5.4.3",
+  "version": "5.4.4",
   "license": "MIT",
   "author": "Karel Ledru",
   "main": "dist/index.js",
@@ -40,8 +40,7 @@
     "through2": "~4.0.2",
     "typescript": "^4.2.4",
     "vinyl": "~2.2.1",
-    "vinyl-fs": "^3.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vinyl-fs": "^3.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
