@@ -5,8 +5,8 @@
   "type": "module",
   "license": "MIT",
   "author": "Karel Ledru",
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "exports": "./src/index.js",
+  "types": "./src/index.d.ts",
   "bin": {
     "i18next": "./bin/cli.js"
   },
@@ -68,7 +68,7 @@
   },
   "files": [
     "bin/",
-    "dist/",
+    "src/",
     "i18next-parser.config.js"
   ],
   "keywords": [
