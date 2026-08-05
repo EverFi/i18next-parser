@@ -34,7 +34,7 @@
     "fs-extra": "^10.0.0",
     "gulp-sort": "^2.0.0",
     "i18next": "^23.7.11",
-    "js-yaml": "4.1.0",
+    "js-yaml": "^4.3.1",
     "rsvp": "^4.8.2",
     "sort-keys": "^4.2.0",
     "through2": "~4.0.2",
@@ -84,6 +84,9 @@
     "braces": "^3.0.3",
     "glob-parent": "^5.1.2",
     "micromatch": "^4.0.6",
-    "mocha/minimatch": "^5.1.8"
+    "mocha/minimatch": "^5.1.8",
+    "mocha/js-yaml": "^4.3.1",
+    "brace-expansion": "^2.1.4",
+    "**/@istanbuljs/load-nyc-config/js-yaml": "^3.15.1"
   }
 }
