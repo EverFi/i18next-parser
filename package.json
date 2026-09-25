@@ -13,7 +13,6 @@
     "npm": ">=6",
     "yarn": ">=1"
   },
-  "packageManager": "yarn@1.22.22",
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text yarn test",
     "test": "mocha -r @babel/register -r @babel/polyfill --recursive test/*.test.js test/**/*.test.js",
