@@ -13,6 +13,7 @@
     "npm": ">=6",
     "yarn": ">=1"
   },
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text yarn test",
     "test": "mocha -r @babel/register -r @babel/polyfill --recursive test/*.test.js test/**/*.test.js",
@@ -82,8 +83,6 @@
   "resolutions": {
     "ansi-regex": "^5.0.1",
     "braces": "^3.0.3",
-    "glob-parent": "^5.1.2",
-    "micromatch": "^4.0.6",
-    "mocha/minimatch": "^5.1.8"
+    "glob-parent": "^5.1.2"
   }
 }
